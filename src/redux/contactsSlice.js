@@ -1,16 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
 
-// const contactsInitialState = () => {
-//   const contactsFromLS = localStorage.getItem('contacts');
-//   const parsedContacts = JSON.parse(contactsFromLS);
-//   if (parsedContacts) {
-//     return parsedContacts;
-//   } else {
-//     return [];
-//   }
-// };
-
 const handlePending = state => {
   state.isLoading = true;
 };
@@ -64,30 +54,3 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-
-//  addContact: {
-//       reducer(state, action) {
-//         if (
-//           state.find(
-//             contact =>
-//               contact.name.toLowerCase() === action.payload.name.toLowerCase()
-//           )
-//         ) {
-//           return alert(`${action.payload.name} is already in contacts!`);
-//         }
-//         state.push(action.payload);
-//       },
-//       prepare(name, number) {
-//         return {
-//           payload: {
-//             id: nanoid(),
-//             name,
-//             number,
-//           },
-//         };
-//       },
-//     },
-//     deleteContact(state, action) {
-//       const index = state.findIndex(contact => contact.id === action.payload);
-//       state.splice(index, 1);
-//     },

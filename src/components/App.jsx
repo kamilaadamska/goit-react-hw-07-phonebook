@@ -6,6 +6,7 @@ import { ContactList } from './contactlist/ContactList';
 import { Filter } from './filter/Filter';
 import css from './app.module.css';
 import { fetchContacts } from 'redux/operations';
+import { Blocks } from 'react-loader-spinner';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,8 +25,16 @@ export const App = () => {
       <h2 className={css.headerSecondary}>Contacts</h2>
       <div className={css.contactsBox}>
         <Filter />
-        {isLoading && <p>Loading contacts...</p>}
-        {error && <p>{error}</p>}
+        {isLoading && (
+          <div className={css.centred}>
+            <Blocks />
+          </div>
+        )}
+        {error && (
+          <div className={css.centred}>
+            <b>{error}</b>
+          </div>
+        )}
         {contacts && <ContactList />}
       </div>
     </div>

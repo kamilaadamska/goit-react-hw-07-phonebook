@@ -27,3 +27,8 @@
   min-width: 27rem;
   margin-bottom: 2rem;
 }
+
+.centred {
+  display: flex;
+  justify-content: center;
+}

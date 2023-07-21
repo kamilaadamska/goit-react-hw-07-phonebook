@@ -29,14 +29,6 @@ const contactsSlice = createSlice({
     [addContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      if (
-        state.contacts.find(
-          contact =>
-            contact.name.toLowerCase() === action.payload.name.toLowerCase()
-        )
-      ) {
-        return alert(`${action.payload.name} is already in contacts!`);
-      }
       state.contacts.push(action.payload);
     },
     [addContact.rejected]: handleRejected,

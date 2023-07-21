@@ -21,6 +21,7 @@ export const ContactForm = () => {
         contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
       )
     ) {
+      addContactForm.reset();
       return alert(`${newContact.name} is already in contacts!`);
     }
 

@@ -1,23 +1,23 @@
-import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+// import { useDispatch } from 'react-redux';
+// import { addContact } from 'redux/contactsSlice';
 import css from './contactform.module.css';
 
 export const ContactForm = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  // const handleSubmit = e => {
+  //   e.preventDefault();
 
-    const addContactForm = e.currentTarget;
-    const addedName = addContactForm.elements.name.value;
-    const addedNumber = addContactForm.elements.number.value;
+  //   const addContactForm = e.currentTarget;
+  //   const addedName = addContactForm.elements.name.value;
+  //   const addedNumber = addContactForm.elements.number.value;
 
-    dispatch(addContact(addedName, addedNumber));
-    addContactForm.reset();
-  };
+  //   dispatch(addContact(addedName, addedNumber));
+  //   addContactForm.reset();
+  // };  onSubmit={handleSubmit}
 
   return (
-    <form onSubmit={handleSubmit} className={css.contactForm}>
+    <form className={css.contactForm}>
       <label className={css.formLabel}>
         Name
         <input
